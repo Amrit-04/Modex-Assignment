@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #050505;
+    color: #00ffcc;
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 204, .05) 25%, rgba(0, 255, 204, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 204, .05) 75%, rgba(0, 255, 204, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 204, .05) 25%, rgba(0, 255, 204, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 204, .05) 75%, rgba(0, 255, 204, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+.retro-app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.retro-app h1 {
+    font-size: 24px;
+    color: #ff00ff;
+    text-shadow: 2px 2px 0px #00ffff;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.location-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.location-card {
+    background: #111;
+    border: 2px solid #00ffcc;
+    padding: 20px;
+    box-shadow: 4px 4px 0px #00ffcc;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.location-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #ff00ff;
+    border-color: #ff00ff;
+}
+
+.location-card h3 {
+    color: #ffff00;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.slot-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.slot {
+    background: #222;
+    border: 2px solid #333;
+    padding: 15px;
+    width: 140px;
+    text-align: center;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
+.slot.available {
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}
+
+.slot.booked {
+    border-color: #ff0040;
+    opacity: 0.7;
+    background: #300;
+}
+
+.booking-form button {
+    margin-top: 10px;
+    background: #00ffcc;
+    color: #000;
+    border: none;
+    padding: 8px 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.booking-form button:hover:not(:disabled) {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.booking-form button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+.success-message {
+    color: #00ffcc;
+    margin-top: 5px;
+    font-size: 8px;
+}
+
+.error-message {
+    color: #ff0040;
+    margin-top: 5px;
+    font-size: 8px;
+}

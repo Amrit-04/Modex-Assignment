@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  title: ParkIt API
+  description: API for the ParkIt Parking Booking System
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/api
+    description: Local Development Server
+
+paths:
+  /locations:
+    get:
+      summary: List all parking locations
+      description: Returns a list of locations with their real-time available slot counts.
+      responses:
+        '200':
+          description: A JSON array of locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    address:
+                      type: string
+                    total_slots_count:
+                      type: integer
+                    available_slots:
+                      type: integer
+    post:
+      summary: Create a new location
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                address:
+                  type: string
+                total_slots:
+                  type: integer
+      responses:
+        '201':
+          description: Location created successfully
+
+  /slots/{location_id}:
+    get:
+      summary: Get slots for a location
+      parameters:
+        - in: path
+          name: location_id
+          schema:
+            type: integer
+          required: true
+          description: ID of the location to fetch slots for
+      responses:
+        '200':
+          description: List of slots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    start_time:
+                      type: string
+                      format: date-time
+                    end_time:
+                      type: string
+                      format: date-time
+                    is_booked:
+                      type: boolean
+
+  /bookings:
+    post:
+      summary: Book a slot
+      description: Books a specific slot for a user. Handles concurrency using DB locks.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                slot_id:
+                  type: integer
+                user_id:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Booking successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: string
+                    example: PENDING
+        '400':
+          description: Slot not available
