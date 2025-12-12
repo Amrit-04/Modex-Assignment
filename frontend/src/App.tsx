@@ -1,9 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Booking from './pages/Booking';
-import Admin from './pages/Admin';
+import axios from 'axios';
 import { AuthProvider } from './context/AuthContext';
+
+// Configure global API base URL for Production (Vercel) vs Local
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 function App() {
     return (
