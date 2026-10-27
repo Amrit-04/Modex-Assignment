@@ -1,9 +1,16 @@
 # 🅿️ ParkIt
 
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![NodeJS](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?style=flat&logo=openapi-initiative&logoColor=white)](./swagger.yaml)
+
 A retro-themed parking slot booking application built with React, Node.js, and PostgreSQL.
 
 ## 🚀 Deliverables
-- **Source Code**: [GitHub Repository Link Here]
+- **Source Code**: [Amrit-04/Modex-Assignment](https://github.com/Amrit-04/Modex-Assignment)
 - **API Documentation**: [swagger.yaml](./swagger.yaml) (OpenAPI 3.0)
 - **Technical Report**: [TECHNICAL_WRITEUP.md](./TECHNICAL_WRITEUP.md)
 
